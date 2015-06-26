@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<title>Sprites mods - Hard disk hacking - Hooking up JTAG</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/style-new.css">
+<link rel="stylesheet" type="text/css" href="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/print.css" media="print">
+<link type="application/rss+xml" rel="alternate" title="Sprites Mods" href="http://spritesmods.com/rss.php">
+<script src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/ca-pub-6055011648930388.js" type="text/javascript" async=""></script><script id="COINWIDGETCOM_JQUERY" src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/jquery.js"></script><link href="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/coin.css" type="text/css" rel="stylesheet" id="COINWIDGETCOM_STYLESHEET"><script id="COINWIDGETCOM_INFO0.027570120333368253" src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/lookup.php"></script></head>
+<body>
+
+<div id="header"><span id="sitename"><span id="sitenamebig">SpritesMods</span>.com</span><h1>Hard disk hacking - Hooking up JTAG</h1></div>
+
+
+<div id="left">
+<p>
+<a href="http://spritesmods.com/?art=main">Welcome</a><br></p><ul id="mainmenu"><li><a href="http://spritesmods.com/?art=hardware">Hardware stuff</a></li><li><a href="http://spritesmods.com/?art=hacks">Hacks</a><ul id="submenu"><li><a href="http://spritesmods.com/?art=vpx500">Hacking the VPx500</a></li><li><a href="http://spritesmods.com/?art=hddhack">Hard disk hacking</a></li><li><a href="http://spritesmods.com/?art=zx3hack">Hacking the Kodak Zx3</a></li><li><a href="http://spritesmods.com/?art=rtl8366sb">Dumb to managed switch conversion</a></li><li><a href="http://spritesmods.com/?art=rapidisnake">Snake on a Keyboard</a></li><li><a href="http://spritesmods.com/?art=twitter1943">Twittering vintage arcade game</a></li><li><a href="http://spritesmods.com/?art=ledbl">LEDs replacing CCFL backlight</a></li><li><a href="http://spritesmods.com/?art=keybled">Laptop keyboard LED</a></li><li><a href="http://spritesmods.com/?art=wskpsip">Convert a SMC WSKP100 to use SIP</a></li><li><a href="http://spritesmods.com/?art=mouseeye">Optical mouse-cam</a></li><li><a href="http://spritesmods.com/?art=picframe">Use a cheap digital photoframe as a second display for your PC</a></li><li><a href="http://spritesmods.com/?art=sweexusb">Add USB to a Sweex LB000021 router</a></li><li><a href="http://spritesmods.com/?art=ljdisplay">Standalone HPLJ display hack</a></li><li><a href="http://spritesmods.com/?art=swordfish">Damocles' Swordfish</a></li><li><a href="http://spritesmods.com/?art=wtcluster">Cluster using WT-300s</a></li></ul></li><li><a href="http://spritesmods.com/?art=consoles">Console hacking</a></li><li><a href="http://spritesmods.com/?art=security">Security</a></li><li><a href="http://spritesmods.com/?art=software">Software</a></li><li><a href="http://spritesmods.com/?art=nabaztag">Nabaztag</a></li><li><a href="http://spritesmods.com/?art=about">About Spritesmods</a></li></ul></div>
+
+<div id="right">
+<div id="righttop">
+<p><a href="http://spritesmods.com/?art=hddhack&amp;page=1"><strong>Page 1</strong><br></a>Intro</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=2"><strong>Page 2</strong><br></a>Parts on the PCB</p><p><strong>Page 3</strong><br>Hooking up JTAG</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=4"><strong>Page 4</strong><br></a>Injecting code</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=5"><strong>Page 5</strong><br></a>Persistence</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=6"><strong>Page 6</strong><br></a>Software flashing</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=7"><strong>Page 7</strong><br></a>Other uses</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=8"><strong>Page 8</strong><br></a>Conclusion (+ discussion / remarks)</p><p>
+</p>
+</div>
+<div id="rightbottom">
+<p>
+Do you like my hacking? If so, please consider leaving something in the<br>
+</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input name="cmd" value="_donations" type="hidden">
+<input name="business" value="AWHK8LYRDDS3C" type="hidden">
+<input name="lc" value="GB" type="hidden">
+<input name="item_name" value="Spritesmods.com" type="hidden">
+<input name="no_note" value="0" type="hidden">
+<input name="cn" value="Remarks" type="hidden">
+<input name="no_shipping" value="1" type="hidden">
+<input name="rm" value="1" type="hidden">
+<input name="return" value="http://spritesmods.com/?art=main&amp;thanks=1" type="hidden">
+<input name="currency_code" value="EUR" type="hidden">
+<input name="bn" value="PP-DonationsBF:donate.png:NonHosted" type="hidden">
+<input src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/donate.png" name="submit" alt="PayPal, de veilige en complete manier van online betalen." border="0" type="image">
+<!--
+<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+-->
+</form>
+
+<p>
+Or use Bitcoins:<br>
+<script src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/coin.js"></script>
+<script>
+CoinWidgetCom.go({
+	wallet_address: "16wKm29FmTLmYSrDtBXB4zLYGsqfrTwcEC"
+	, currency: "bitcoin"
+	, counter: "count"
+	, alignment: "bl"
+	, qrcode: true
+	, auto_show: false
+	, lbl_button: "Donate"
+	, lbl_address: "My Bitcoin Address:"
+	, lbl_count: "donations"
+	, lbl_amount: "BTC"
+});
+</script><span data-coinwidget-instance="0" class="COINWIDGETCOM_CONTAINER"><a class="COINWIDGETCOM_BUTTON_BITCOIN" href="#"><img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/icon_bitcoin.png"><span>Donate</span></a><span>0</span></span>
+</p>
+
+
+<p>
+<br>Current contents:
+<br>EUR282 (about $375.06) and a bunch of cool hardware.
+</p>
+
+
+<p>
+Follow Spritesmods on <a href="http://twitter.com/SpritesMods">Twitter</a>!
+</p>
+</div>
+</div>
+<div id="center">
+<p></p><h1>Hooking up JTAG
+</h1>
+<p></p>
+<!-- google_ad_section_start -->
+<p>
+Luckily, there are other ways to find out information about these ICs
+than datasheets. One of my web searches actually resulted in something
+useful.
+</p>
+<p>
+what I found was a <a href="http://forum.hddguru.com/viewtopic.php?t=20324&amp;start=">thread</a> from a guy called Dejan on the HDDGuru forums.
+Dejan had managed to corrupt the internal flash of his hard disk
+in some way and wanted to know if there's a way to either boot the 
+controller from external flash, or a method to re-write the flash.
+For five days, he doesn't get a reponse, but the guy is inventive: the
+next thing he posts is the message that he has found the pinout of the
+JTAG-port. That's a major find: the JTAG-port can be used to control
+a controller like a puppet. You can stop it, restart it, modify memory,
+set breakpoints etc with it. Dejan then figures out how to dump the
+boot ROM of the controller, figures out there's a serial port on one
+of the hard disk headers and manages to restore his flash ROM. He
+then dumps a few more bits and pointers about the flash update process
+before finally disappearing into the mists of the Internet again.
+</p>
+<p>
+All this was pretty useful information: it told me at least the
+Western Digital controllers seem to have an ARM-core that's accessible
+over the JTAG-port. It also told me these hard disks usually have a 
+serial port, which is usually unused but could be useful for debugging
+my hack. With this, I should have enough information to start hacking.
+</p>
+<p>
+So, this is my setup:<br>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/IMG_2294c.JPG"><img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/tmb-IMG_2294c.JPG"></a>
+</p>
+<p>
+The red thing is an FT2232H-board, a cheap board you can get for about
+EUR30 which can do JTAG and serial, as well as SPI-communications. It's
+connected to the JTAG-interface of the hard disk, as well as the header
+where the hard disk has its serial port. The HD is directly connected
+to the SATA-port on my computers mainboard, as well as to an external 
+ATX power supply. I use OpenOCD as the software to drive the JTAG-port.
+</p>
+<p>
+Now, the question is: would it actually work? Dejan did this with 
+a 2.5" 250G HD with an 88i6745-controller, and he detected an arm9-core.
+I grabbed a 3.5" 2TB HD with an 88i9146-controller instead, which had
+a different form factor and is a bit newer. Luckily, OpenOCD has a way
+to detect what's on the JTAG chain by itself. This is what it found:<br>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/multicore.png">
+<img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/tmb-multicore.png"></a>
+</p>
+<p>
+This confused me for a bit... I expected a single tap, for the single ARM
+core that's inthere... but instead, I found <i>three</i> taps... does
+that mean this chip has three ARM-cores?
+</p>
+<p>
+After some research, I found out that yes, the chip indeed seems to have
+three cores. There's two Feroceons, which are quite powerful arm9-like 
+cores, and a Cortex-M3 core, which is a bit smaller, more 
+microcontroller-ish core. Some more playing around (and later research)
+indicating the controllers all had different functions:
+</p><ul>
+<li>Feroceon 1 handles the physical reading and writing from/to the 
+hard disk platters</li>
+<li>Feroceon 2 handles the SATA-interface</li>
+<li>Feroceon 2 also handles the cache and LBA to CHS translation</li>
+<li>The Cortex-M3 handles... nothing? I could stop it and still have
+all hard disk functions.</li>
+</ul>
+<p></p>
+<p>
+Now, what core to start hacking at? My target was to try and compromise
+the security of a system by using hard disk firmware mods. The easiest
+and probably hardest-to-detect way to do this was to modify data on the
+fly. That way, the data on the disk wouldn't need to be changed and the
+firmware could just make itself invisible. To do this, I would need
+to find a suitable core to that kind of interception: I needed to
+have a core that would have access to the data when it's in-transit 
+from the disk to the SATA-cable, and also could be rigged to modify
+the data while it was in between those two points.
+</p>
+<p>
+Now, how would that data get from the HD platters to the SATA interface?
+Here's where I used a bit of intuition. My reasoning went something 
+like this:<br>
+If the processors would use a standard memory copy, with them running
+at 150MHz, they would only be able to reach 150*23/2=2.4Gbps, and in
+practice most likely much less. The hard disk is specced at 6Gbps, so
+there's probably some hardware acceleration involved. The most likely
+hardware acceleration would be to use DMA. That would mean the data
+is copied directly from the head reading logic to memory, without
+active involvment of the processor. The same goes for the SATA-port:
+the processor would have to only indicate where the data is, and the
+DMA logic would take care of reading the data directly from memory. 
+</p>
+<p>
+If this was the case, where would the memory that the DMA-engine would
+be pointed at, be located? The cache of the hard disk would be a good
+location: data read from the disk would need to be in cache anyway, so
+it would make sense to copy it there immediately when reading from the 
+disk. I figured out earlier that Feroceon 2 was responsible for the
+cache handling; that'd make it a prime target for a hacking attempt.
+</p>
+<p>
+So, I deduced that the data was read and written through DMA, without
+any CPU action involved. Now the question was: Even if the CPUs 
+<i>won't</i> touch the data in normal operation, <i>can</i> they
+actually access it? To answer this question, I first used the 
+JTAG-connection and a bit of disassembly to figure out the memory map
+of the 2nd Feroceon:<br>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/memmap.png">
+<img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/tmb-memmap.png"></a>
+</p>
+<p>
+As you can see, the memory map is a bit fragmented. There are small
+bits of RAM sprinkled around, there's some IO and IRQ space, and a
+bit of internal boot ROM. There also is a big, 64MB segment of what
+I suspected was the DRAM-chip with the cache in it. Let's find out
+if this is actually true. First, I mounted the disk on my machine and
+wrote 'Hello world!' to a file on it. Now, could I find the string 
+in the 64MB mem region?
+</p>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/cachedemo.png">
+<img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/tmb-cachedemo.png"></a>
+<p>
+Yep, there it is. Seems the cache is accessible by the Feroceons and
+mapped to the 64MB DRAM region.
+</p>
+<!-- google_ad_section_end -->
+<p>	<script async="" src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Hooking%20up%20JTAG_files/adsbygoogle.js"></script>
+	<!-- singlebigad -->
+	<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6055011648930388" data-ad-slot="3668631373"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</p><p id="prevnext"><a href="http://spritesmods.com/?art=hddhack&amp;page=2">« Prev</a>&nbsp;3&nbsp;<a href="http://spritesmods.com/?art=hddhack&amp;page=4">Next »</a></p><br><div class="copy">© 2006-2014 Sprite_tm - <a href="http://spritesmods.com/?art=contact&amp;af=Hard%20disk%20hacking">Contact</a></div></div>
+
+
+</body></html>
