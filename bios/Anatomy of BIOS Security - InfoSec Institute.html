@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html data-scrolled="true" slick-uniqueid="3" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths desktop landscape" prefix="og: http://ogp.me/ns#" lang="en-US"><head>
+    <meta charset="UTF-8">
+
+<meta name="description" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/style_002.css">
+<link rel="pingback" href="http://resources.infosecinstitute.com/xmlrpc.php">
+<script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/a_002.html" async=""></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/pd.js" type="text/javascript"></script><script async="" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/cbgapi.loaded_1"></script><script async="" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/cbgapi.loaded_0"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/sdk.js" id="facebook-jssdk"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/widgets.js" id="twitter-wjs"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/analytics.js" async=""></script><script>var ajaxUrl = 'http://resources.infosecinstitute.com/wp-admin/admin-ajax.php';</script>
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Anatomy of BIOS Security - InfoSec Institute</title>
+<meta name="description" content="Introduction Computer security has become much harder to manage in recent years, and this is due to the fact that attackers continuously come up with new a">
+<link rel="canonical" href="http://resources.infosecinstitute.com/anatomy-of-bios-security/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anatomy of BIOS Security - InfoSec Institute">
+<meta property="og:description" content="Introduction Computer security has become much harder to manage in recent years, and this is due to the fact that attackers continuously come up with new a">
+<meta property="og:url" content="http://resources.infosecinstitute.com/anatomy-of-bios-security/">
+<meta property="og:site_name" content="InfoSec Institute">
+<meta property="article:tag" content="feature">
+<meta property="article:tag" content="hacking">
+<meta property="article:section" content="Hacking">
+<meta property="article:published_time" content="2013-07-31T08:27:16+00:00">
+<meta property="article:modified_time" content="2015-06-29T14:02:51+00:00">
+<meta property="og:updated_time" content="2015-06-29T14:02:51+00:00">
+<meta property="og:image" content="http://resources.infosecinstitute.com/wp-content/uploads/BiosSecurity07312013.jpg">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="InfoSec Institute » Anatomy of BIOS Security Comments Feed" href="http://resources.infosecinstitute.com/anatomy-of-bios-security/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/resources.infosecinstitute.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.2"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/wp-emoji-release.js"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="cptch_stylesheet-css" href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpjb-glyphs-css" href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/wpjb-glyphs.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpjb-css-css" href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="enlighter-local-css" href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/EnlighterJS.css" type="text/css" media="all">
+<!-- This site uses the Google Analytics by Yoast plugin v5.4.2 - Universal enabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-146509-8', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('send','pageview');
+
+</script>
+<!-- / Google Analytics by Yoast -->
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/modernizr.js"></script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/device.js"></script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/mootools-yui-compressed.js"></script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/EnlighterJS.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://resources.infosecinstitute.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://resources.infosecinstitute.com/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="http://resources.infosecinstitute.com/?p=20308">
+<script type="text/javascript">/* <![CDATA[ */window.addEvent('domready', function(){if (typeof EnlighterJS == "undefined"){return;};EnlighterJS.Util.Init('pre.EnlighterJSRAW', 'code.EnlighterJSRAW', {"language":"standard","theme":"git","indent":-1,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":true,"email":"mail@example.tld"}});});/* ]]> */</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+  <script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/secureAnonymousFramework"></script><style type="text/css">* html #li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link{height:1% !important;}#li_ui_li_gen_1437382597110_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1437382597110_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link:link, #li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link:visited, #li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link:hover, #li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1437382597110_0 a#li_ui_li_gen_1437382597110_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;}#li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title, #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title{}.IN-shadowed #li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title{}.IN-shadowed #li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title, .IN-shadowed #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title{}#li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title-text, #li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title-text, #li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title-text *{color:#fff !important;}#li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title-text, #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title-text, #li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title-text *, #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title-text *{color:#fff !important;}#li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title #li_ui_li_gen_1437382597110_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title-text, .success #li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1437382597110_0 #li_ui_li_gen_1437382597110_0-title{}.success #li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title-text, .success #li_ui_li_gen_1437382597110_0.hovered #li_ui_li_gen_1437382597110_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title, .success #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title-text, .success #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title-text, .success #li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title-text *, .success #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1437382597110_0.clicked #li_ui_li_gen_1437382597110_0-title, .IN-shadowed .success #li_ui_li_gen_1437382597110_0.down #li_ui_li_gen_1437382597110_0-title{}#li_ui_li_gen_1437382597117_1-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:20px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1437382597117_1.IN-right {display:block !important;float:left !important;height:20px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -447px !important;}#li_ui_li_gen_1437382597117_1-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -426px !important;}#li_ui_li_gen_1437382597117_1-content.IN-right {display:inline !important;font-size:11px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:20px !important;padding:0 5px 0 5px !important;}#li_ui_li_gen_1437382597117_1-container.IN-empty {display:none !important;}#li_ui_li_gen_1437382597117_1-container.IN-hidden #li_ui_li_gen_1437382597117_1 {display:none !important;}* html #li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link{height:1% !important;}#li_ui_li_gen_1437382597122_2{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1437382597122_2 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link:link, #li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link:visited, #li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link:hover, #li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1437382597122_2 a#li_ui_li_gen_1437382597122_2-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;}#li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title, #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title{}.IN-shadowed #li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title{}.IN-shadowed #li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title, .IN-shadowed #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title{}#li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title-text, #li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title-text em{font-style:italic !important;}#li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title-text, #li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title-text *{color:#fff !important;}#li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title-text, #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title-text, #li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title-text *, #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title-text *{color:#fff !important;}#li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title #li_ui_li_gen_1437382597122_2-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title-text, .success #li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1437382597122_2 #li_ui_li_gen_1437382597122_2-title{}.success #li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title-text, .success #li_ui_li_gen_1437382597122_2.hovered #li_ui_li_gen_1437382597122_2-title-text *{color:#fff !important;}.success #li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title, .success #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title-text, .success #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title-text, .success #li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title-text *, .success #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1437382597122_2.clicked #li_ui_li_gen_1437382597122_2-title, .IN-shadowed .success #li_ui_li_gen_1437382597122_2.down #li_ui_li_gen_1437382597122_2-title{}#li_ui_li_gen_1437382597124_3-container.IN-top {display:inline-block !important;overflow:visible !important;position:relative !important;height:42px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1437382597124_3.IN-top {display:inline-block !important;height:42px !important;width:60px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:-207px -470px !important;}#li_ui_li_gen_1437382597124_3-content.IN-top {display:inline !important;font-size:16px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:38px !important;}#li_ui_li_gen_1437382597124_3-container.IN-empty #li_ui_li_gen_1437382597124_3-inner.IN-top {background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -560px !important;background-size:initial !important;overflow:hidden !important;margin:4px auto 0 auto !important;width:28px !important;height:28px !important;display:block !important;}#li_ui_li_gen_1437382597124_3-container.IN-empty #li_ui_li_gen_1437382597124_3-content.IN-top {text-indent:-999px !important;display:inline-block !important;}#li_ui_li_gen_1437382597124_3-container.IN-hidden #li_ui_li_gen_1437382597124_3 {display:none !important;}</style><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/embed.js" async="" type="text/javascript"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/count_002.js" type="text/javascript" async=""></script><link href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/frontend_002.css" media="all" id="ig_css_0" rel="stylesheet" type="text/css"><link href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/default.css" media="all" id="ig_css_1" rel="stylesheet" type="text/css"><link href="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/hello.css" media="all" id="ig_css_2" rel="stylesheet" type="text/css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/analytics_002" type="text/javascript"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/analytics" type="text/javascript"></script></head>
+
+  <body data-gets-modal="" class="single single-post postid-20308 single-format-standard without-series"><div class="icegram action_bar_32345"><div style="background-color: rgb(127, 127, 127); margin-top: 0px; display: block;" class="ig_action_bar ig_container ig_hello ig_top ig_show" id="icegram_message_32345"><div class="ig_content ig_clear_fix"><div style="" class="ig_arrow_block ig_open ig_rotate" id="action_bar_close_32345"><span style="display: inline-block;" class="ig_arrow"></span></div><div><div class="ig_close"></div></div><div class="ig_data"><div class="ig_headline">Certification Tracker Launched! </div><div class="ig_message"><p>Your one stop shop for cert info, salary data, jobs, study resources &amp; more!</p>
+</div></div><div style="background-color: rgb(252, 252, 252); border-color: rgb(0, 0, 0); color: rgb(0, 0, 0); cursor: pointer;" class="ig_button">Click Here!</div></div></div></div>
+    
+    <div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/xRlIuTsSMoE.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/xRlIuTsSMoE_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+    
+          <header class="masthead">
+  
+  <div>
+    <div class="col-3-3">
+      
+      <nav class="top-left">
+        <ul>
+                      <li>
+  <a href="http://infosecinstitute.com/">InfoSec Institute</a>
+      <ul>
+              <li>
+          <a href="http://www.infosecinstitute.com/courses/security.html">IT Security Boot Camps</a>
+        </li>
+              <li>
+          <a href="http://www.infosecinstitute.com/infosec_institute/contact_us.html">Contact InfoSec</a>
+        </li>
+              <li>
+          <a href="http://www.infosecinstitute.com/enterprise-wide-training2.html">Enterprise &amp; Government</a>
+        </li>
+          </ul>
+  </li>                      <li>
+  <a href="http://www.intenseschool.com/">Intense School</a>
+  </li>                  </ul>
+      </nav>
+      
+      <nav class="top-right">
+        <ul>
+                  </ul>
+      </nav>
+      
+    </div>
+  </div>
+  
+  <div>
+    <div class="col-3-3">
+      
+              
+        <div class="logo">
+          <a href="http://resources.infosecinstitute.com/">
+            <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/logo.svg" alt="InfoSec Institute" title="InfoSec Institute" width="126">
+          </a>
+        </div>
+          
+            
+      <a class="menu-button mobile" href="#site-navigation" data-attr="main:toggle">Menu</a>
+
+      <nav class="main" id="site-navigation">
+        
+        <a class="mobile" href="#" data-attr="main:remove" aria-hidden="true">Close Menu</a>
+        <a class="mobile" href="#" data-attr="topics:remove" aria-hidden="true">Back</a>
+        <a class="mobile" href="#" data-attr="content-archives:remove" aria-hidden="true">Back</a>
+      
+        <ul>
+          <li class="mobile menu-item menu-item-type-custom menu-item-object-custom menu-item-4748"><a href="http://infosec.wpengine.com/">Return Home</a></li><li class="has-dropdown  menu-item menu-item-type-custom menu-item-object-custom menu-item-4750 menu-item-has-children"><a href="" data-attr="topics:set">Topics</a><ul data-menu-container="topics"><li><a href="http://resources.infosecinstitute.com/category/hacking-2/" title="Hacking">
+                          Hacking
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/certifications-training/" title="IT Certifications">
+                          IT Certifications
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/forensics-2/" title="Forensics">
+                          Forensics
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/application-security-2/" title="Application Security">
+                          Application Security
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/pen-testing-1/" title="Penetration Testing">
+                          Penetration Testing
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/general-security-2/" title="General Security">
+                          General Security
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/interviews/" title="Interviews">
+                          Interviews
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/virtualization-security/" title="Virtualization Security">
+                          Virtualization Security
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/wireless-security/" title="Wireless Security">
+                          Wireless Security
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/scada-2/" title="SCADA">
+                          SCADA
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/reverse-engineering-2/" title="Reverse Engineering">
+                          Reverse Engineering
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/data-recovery/" title="Data Recovery">
+                          Data Recovery
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/exploit-development/" title="Exploit Development">
+                          Exploit Development
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/compliance-auditing/" title="Management, Compliance, &amp; Auditing">
+                          Management, Compliance, &amp; Auditing
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/incident-response-resources/" title="Incident Response">
+                          Incident Response
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/certifications-training/cisa/" title="CISA">
+                          CISA
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/certifications-training/cism/" title="CISM">
+                          CISM
+                        </a></li><li><a href="http://resources.infosecinstitute.com/category/certifications-training/cissp/" title="CISSP">
+                          CISSP
+                        </a></li></ul></li><li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-4758"><a href="http://resources.infosecinstitute.com/contributors/">Contributors</a></li><li class="has-dropdown desktop menu-item menu-item-type-custom menu-item-object-custom menu-item-30046 menu-item-has-children"><a href="#" data-attr="content-archives:set">Content Archives</a><ul data-menu-container="content-archives"><li><a href="http://resources.infosecinstitute.com/2015/" title="2015">
+                          2015
+                        </a></li><li><a href="http://resources.infosecinstitute.com/2014/" title="2014">
+                          2014
+                        </a></li><li><a href="http://resources.infosecinstitute.com/2013/" title="2013">
+                          2013
+                        </a></li><li><a href="http://resources.infosecinstitute.com/2012" title="2012">
+                          2012
+                        </a></li><li><a href="http://resources.infosecinstitute.com/2011" title="2011">
+                          2011
+                        </a></li><li><a href="http://resources.infosecinstitute.com/2010" title="2010">
+                          2010
+                        </a></li></ul></li><li class="mobile menu-item menu-item-type-custom menu-item-object-custom menu-item-30121"><a href="http://resources.infosecinstitute.com/2015">Content Archives</a></li><li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-32332"><a href="http://certs.infosecinstitute.com/">Certification Tracker</a></li>          
+        </ul>
+      </nav>
+      
+      <nav class="search">
+        <form class="search-form" action="http://www2.infosecinstitute.com/s/12882/ntpoCCBNQ1ttbNTP3ylPLZZeUqLrVgCT" method="get">
+  <fieldset>
+    <input name="s" class="icon search" id="search" type="text">
+    <input class="icon search" title="Search" type="submit">
+  </fieldset>
+</form>
+      </nav>
+      
+    </div>
+  </div>
+  
+</header>          
+    <main>
+      
+      <section class="hero full">
+          
+	<div class="post-col-3-3 wrapper">
+    
+    <div class="post-col-2-3 hook" style="background-image: url('http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads//BiosSecurity07312013-1024x0-c-default.jpg');">
+      <header>
+        <h1>Anatomy of BIOS Security</h1>
+                <div class="meta">
+  Posted in  <a href="http://resources.infosecinstitute.com/category/hacking-2">Hacking</a> on July 31, 2013
+</div>      </header>
+      <div class="share horizontal">
+  
+  <span data-attr="share:toggle" class="icon share-l">Share</span>
+  
+  <ul>
+    
+    <li class="twitter">
+      <iframe style="position: static; visibility: visible; width: 77px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/tweet_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+    </li>
+    
+    <li class="google">
+      <div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 88px; height: 20px;"><iframe title="+Share" data-gapiattached="true" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/sharebutton.html" name="I0_1437382597140" id="I0_1437382597140" vspace="0" tabindex="0" style="position: static; top: 0px; width: 88px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+    </li>
+    
+    <li class="linkedin">
+      <span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1437382597110_0"><a id="li_ui_li_gen_1437382597110_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1437382597110_0-logo">in</span><span id="li_ui_li_gen_1437382597110_0-title"><span id="li_ui_li_gen_1437382597110_0-mark"></span><span id="li_ui_li_gen_1437382597110_0-title-text">Share</span></span></a></span></span><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1437382597117_1-container" class="IN-right"><span id="li_ui_li_gen_1437382597117_1" class="IN-right"><span id="li_ui_li_gen_1437382597117_1-inner" class="IN-right"><span id="li_ui_li_gen_1437382597117_1-content" class="IN-right">12</span></span></span></span></span></span><script type="IN/Share+init" data-counter="right"></script>
+    </li>
+    
+    <li class="reddit">
+      <script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/button1.js"></script><iframe src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/button1.html" scrolling="no" frameborder="0" height="22" width="120"></iframe>
+    </li>
+    
+    <li class="facebook">
+      <div fb-iframe-plugin-query="action=like&amp;app_id=552038044933986&amp;container_width=0&amp;href=http%3A%2F%2Fresources.infosecinstitute.com%2Fanatomy-of-bios-security%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-width="90" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"><span style="vertical-align: bottom; width: 79px; height: 20px;"><iframe class="" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/like.html" style="border: medium none; visibility: visible; width: 79px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f230e137de1420c" frameborder="0" height="1000px" width="90px"></iframe></span></div>
+    </li>
+    
+  </ul>
+  
+</div>    </div>
+    
+    <div class="post-col-1-3">
+      
+              <div class="endemic-ad" style="background-image: url(http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads/5-17.png);">
+  <div>
+    <h3>Ethical Hacking Boot Camp</h3>
+    <h4>Our most popular course!</h4>
+    <p></p>
+    <a href="http://www2.infosecinstitute.com/l/12882/2015-05-05/mxr5t" target="_blank">Click Here!</a>
+  </div>
+</div>            
+      <div class="skillset box  ">
+  
+  <h3>Skillset</h3>
+  
+  <a href="#skillset-modal" rel="modal:open">What's this?</a>
+  
+    
+  <ul>
+          <li>
+        <a href="https://www.skillset.com/skills/security-models" title="Security Models" target="_blank">Security Models</a>
+      </li>
+      </ul>
+  
+  
+</div>      
+    </div>
+    
+  </div>
+  
+      </section>
+      
+      <section class="content full">
+        <div class="col-3-3 wrapper">
+                      
+  <div class="main post-col-2-3">
+    <article class="post-content">
+      <h1>Introduction</h1>
+<p>Computer security has become much harder to manage in recent years, 
+and this is due to the fact that attackers continuously come up with new
+ and more effective ways to attack our systems. As attackers become 
+increasingly sophisticated we as security professionals must ensure that
+ they do not have free reign over the systems that we are hired to 
+protect. An attack vector that many people forget to consider is the 
+boot process itself which is almost completely controlled by the BIOS.</p>
+<p>The BIOS is a privileged piece of software that is generally ignored 
+by day to day users and thus they are usually unable to comprehend the 
+importance of it in our computers. The Basic Input/Output System was 
+first invented by Gary Kildall for use in his operating system CP/M and 
+this became what we now know as the conventional BIOS system. The BIOS 
+appeared in IBM compatible PC’s around 1975 and was used extensively in 
+the CP/M operating system. This was later used in the MSDOS systems 
+where it was known as DOS BIOS. These systems were only responsible for 
+basic pre boot hardware initializations before handing over control to 
+the bootloader. This was fine thirty years ago, when software was 
+simpler and attacks were not very predominant, thus the BIOS itself was 
+not designed with security in mind. However in today’s world this is no 
+longer the case. BIOS security lacks several features that make it 
+vulnerable to external attack.</p>
+<p>These are <strong>some notable attacks</strong> carried out against BIOS systems:</p>
+<p><strong>Chernobyl Attack (1998)</strong> – Also known as CIH or 
+Spacefiller was the first major attack on BIOS systems. This virus 
+installs on the windows memory and hooks into file access calls and 
+infects all the currently executing programs. Then the virus tries to 
+flash the BIOS rom by filling it with zeros. The other payload infects 
+the Master Boot Record (MBR) by filling the first megabyte of the hard 
+disk with zeros.</p>
+<p><strong>Mebromi (2012)</strong> – Is made up of a BIOS rootkit, MBR 
+rootkit, Trojan downloader and PE infector. This Trojan deletes a 
+specific registry value and checks for the BIOS manufacturer. If it’s 
+Award BIOS, it then infects the BIOS ROM and in turn infects the Master 
+BOOT Record (MBR) and alters it allowing the execution of an infected 
+program at each Operating System start-up.</p>
+<p>We attempt to prevent such attacks by outlining several attack 
+vectors and also suggest several mechanisms for the mitigation of 
+attacks against the BIOS.</p>
+<h1>BIOS (Basic Input Output System)</h1>
+<div style="width: 627px" class="wp-caption alignnone"><a href="http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads/073113_1327_AnatomyofBI1.jpg" target="_blank"><img title="Click to Enlarge" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI1.jpg" alt="Click to Enlarge" height="505" width="617"></a><p class="wp-caption-text">Click to Enlarge</p></div>
+<p>Basic Input/Output System (BIOS), also known as the system BIOS or 
+ROM BIOS is a standard defining a firmware interface. BIOS software is 
+built into the PC, and is the first software run by a PC when powered 
+on. The fundamental purposes of the BIOS are to initialize and test the 
+system hardware components, and to start the boot loader or an operating
+ system from a secondary storage device. It also takes care of essential
+ system functions such as power management and temperature regulation. 
+It provides an abstraction layer for the underlying hardware by 
+providing a consistent way for operating systems &amp; application 
+programs to interact with various input/output devices.</p>
+<p>Changes in system hardware are abstracted by the BIOS from programs 
+that use BIOS services instead of directly accessing the hardware. BIOS 
+software is stored on a non-volatile ROM chip on the motherboard. Its 
+unique design makes it compatible for particular models of computer, 
+interfacing with various devices that make up the complementary chipset 
+of the system. In modern PC’s the BIOS contents are stored on an EEPROM 
+chip.</p>
+<p>An EEPROM chip or Electronically Erasable Programmable Read only 
+memory is a type of non-volatile memory used by many electronic devices 
+that requires small amounts of data to be stored for quick access. The 
+contents of an EEPROM chip can be flashed i.e. they can be overwritten 
+with new data. This allows BIOS software to be easily upgraded to add 
+new features and bug fixes. This feature is also one of the reasons that
+ BIOS chipsets are vulnerable to attack. A BIOS screen looks like this:</p>
+<p><span style="font-size: 14pt;"><strong>Why BIOS is in Blue colour?</strong></span></p>
+<p>Most BIOS Screens will be Blue in colour, this is due to how the BIOS
+ Manufacturers implement general BIOS colour attributes. BIOS Colour 
+Attributes are 8 bit values where the lower 4 bits represent the 
+character colour and the higher 4 bits represent the background colour. 
+In BIOS, to print a white character in blue background the ‘BIOS colour 
+attribute’ would be set to a hexadecimal value of 0x1F.</p>
+<p>Under certain conditions, setting the highest bit of the background 
+colour may cause the text to blink instead of making the background 
+colour intensified. In this context the highest bit of the background 
+colour should be kept low according to the BIOS colour attribute 
+distribution. As a result the Blue colour which comprises value ‘1’ in 
+hexadecimal is generally used for an uninterrupted BIOS display with 
+intensified background with clear text.</p>
+<p><img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI2.jpg" alt=""></p>
+<h2>Top BIOS Manufacturers</h2>
+<p>BIOS software is developed by several companies around the world and 
+are usually deeply integrated with the system motherboard. Several of 
+the most popular BIOS manufacturers are:</p>
+<ul>
+<li>American Mega Trends</li>
+<li>WinBond</li>
+<li>Phoenix</li>
+<li>AMI</li>
+<li>IBM</li>
+<li>Award</li>
+</ul>
+<h2>Role of BIOS</h2>
+<p>The BIOS has an essential role in the boot process of the computer 
+also known as bootstrapping. It initializes system hardware manages ACPI
+ and regulates CPU temperatures during the booting process. The major 
+responsibilities of the BIOS are listed below:</p>
+<ol>
+<li><strong>Establish Trust: </strong>The BIOS is responsible for 
+verifying the integrity of all the hardware components in the system and
+ also to authenticate them before use. This is done with the help of 
+Core Root of Trust Measurement (CRTM), which basically checks if the 
+hardware is valid and that its integrity has not been compromised.<strong><br>
+</strong></li>
+<li><strong>Test Hardware: </strong>The secondary functionality of the 
+BIOS is to initialize and test the hardware present on the computer 
+before it’s used. Hardware such as the motherboard, chipset and memory 
+are included in this test. This is generally carried out during POST 
+(Power-On-Self-Test).<strong><br>
+</strong></li>
+<li><strong>Load additional Modules: </strong>Several devices present on
+ the computer may require additional firmware for its proper 
+functioning. The BIOS ensures that such additional firmware modules are 
+loaded and executed. These may be stored in the BIOS chip itself or some
+ secondary storage device.<strong><br>
+</strong></li>
+<li><strong>Boot Device Selection: </strong>After the above steps have 
+been carried out the BIOS starts to detect a valid boot device e.g. USB 
+drives, Hard disk etc. Once such a device has been found it executes the
+ bootloader found on that device.<strong><br>
+</strong></li>
+<li><strong>Start Operating System: </strong>After this the actual 
+bootstrapping process begins, the bootloader starts to execute and 
+begins to load the OS kernel into memory. Once the kernel has been 
+initialized the BIOS transfers full control to the Operating System.<strong><br>
+</strong></li>
+</ol>
+<h1>BIOS Overview</h1>
+<p>System BIOS can be of two types namely</p>
+<ul>
+<li>Legacy BIOS<img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI3.png" alt=""></li>
+<li>BIOS based upon the UEFI specification</li>
+</ul>
+<h2>Conventional BIOS (Legacy BIOS)</h2>
+<p>The Legacy BIOS or conventional BIOS is the tried and true BIOS type 
+which has been around for years. It’s generally a 16bit program that is 
+flashed onto a ROM chip and placed in the motherboard of the computer. 
+This type of BIOS is very outdated and more vulnerable to attack 
+therefore it’s advisable to use a newer and more stable specification.</p>
+<p>The key component in conventional BIOS is a boot block. This part is 
+logically separated from other parts of the BIOS and initially executed 
+during the BIOS boot process. Then the boot block checks the integrity 
+of remaining firmware in BIOS and if any is corrupted, then recovers 
+those. The boot block then initializes almost all the hardware’s 
+associated with system by using a Power-On-Self-Test (POST). During this
+ procedure low level hardware components like Memory, CPU, Chipset etc. 
+are initialized.</p>
+<p><span class="pardot-title">Ethical Hacking Training – Resources (InfoSec)</span><iframe scrolling="no" class="pardotform" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/dt6gm.html" type="text/html" allowtransparency="true" style="border: 0" frameborder="0" height="497" width="100%"></iframe></p>
+<p>After this process, it then loads other option ROMS like Video Cards,
+ SCSI Controller Cards, and Network Boot ROM etc. that has its own BIOS 
+software. This Option ROMS could inform the BIOS about its 
+functionality, and then it could be called later on the boot process 
+depending on the order the user had selected. Then the BIOS checks the 
+Master BOOT Record (MBR) in the order of the boot devices priority. If 
+any storage device has a valid data that relates to MBR, then it is 
+selected. MBR then points to a corresponding boot loader of an operating
+ system and thus in turns loads the operating system.</p>
+<p>In conventional Boot process System Management Mode (SMM) can be 
+initiated by using SMI handlers and ACPI table’s code. System Management
+ Mode is a 32-bit mode which runs on high-privileged mode that can 
+override almost all the hardware security mechanisms of protected mode. 
+In order to change to SMM mode BIOS load SMI handlers and initializes 
+the ACPI tables and codes</p>
+<h3>Legacy BIOS Boot Process<em><br>
+</em></h3>
+<p>When a computer is first powered on the BIOS is the first piece of 
+software that is executed, the boot block then executes a POST (<strong>P</strong>ower-<strong>O</strong>n-<strong>S</strong>elf-<strong>T</strong>est)
+ thereby ensuring that all the hardware on the system is valid and 
+accounted. After the POST screen the user has the option to load the 
+BIOS screen or to continue booting the current Operating System instead,
+ this is done by pressing a pre-designated key on the keyboard this key 
+may vary depending on the BIOS manufacturer. The BIOS then checks if any
+ additional pieces of firmware have to be loaded for individual devices 
+on the computer if so, then these modules are loaded and executed.</p>
+<p><img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI4.png" alt=""></p>
+<h2>Unified Extensible Firmware Interface (UEFI)</h2>
+<p>UEFI (Unified Extensible Firmware Interface) is a specification that 
+was first designed by Intel in the 1990 for its Itanium range of 
+computer systems. It was originally called the EFI specification and was
+ intended to be a better replacement for legacy BIOS systems. UEFI has 
+several advantages over the conventional BIOS and is radically different
+ from these older systems.</p>
+<p>The UEFI specification defines a programmable software interface that
+ lies between the device firmware and the Operating system. It provides 
+an almost OS like interface to device firmware. Depending on the 
+manufacturer it may lie on top of the BIOS but it is generally place in 
+the /EFI/ directory on some form of non-volatile memory. This may either
+ be a NAND chip on the motherboard, a hard drive or even on a network 
+share.</p>
+<p><img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI5.png" alt=""></p>
+<h3>Differences between UEFI and Legacy BIOS</h3>
+<p>There are several differences between conventional BIOS and UEFI 
+systems many of them add greater functionality and power to the 
+computer. It also provides a more efficient and secure booting 
+mechanism.</p>
+<ol style="margin-left: 39pt;">
+<li><strong>Larger Address Space: </strong>Conventional BIOS were forced
+ to work in 16bit mode with a maximum of 1mb addressable space. UEFI 
+allows running in 32 and 64bit mode allowing larger and more 
+sophisticated programs to be run by the UEFI.<strong><br>
+</strong></li>
+<li><strong>Support for Larger File Systems:</strong> Traditional BIOS 
+only supports booting of disks which have MBR partitions. MBR 
+partitioning schemes only support 4 partitions per disk and a maximum 
+size of 2TB. UEFI supports the booting of GPT partitions (GUID 
+partitions) which allow the booting of extremely large disks up to 8Zb.<strong><br>
+</strong></li>
+<li><strong>Improved Security Capabilities:</strong> The UEFI 
+specification also improves upon the security aspects of the older BIOS 
+systems. It supports several security features such as secure boot, it 
+also has provisions for providing basic cryptographic and public key 
+infrastructure. <strong><br>
+</strong></li>
+<li><strong>CPU independent design: </strong>UEFI has employed a CPU 
+independent design methodology, i.e. it can run on many different types 
+of architectures. The code is available is compiled differently for the 
+required platform.<strong><br>
+</strong></li>
+<li><strong>Powerful Execution Environment: </strong>The UEFI 
+specification provides a much more powerful execution environment for 
+computers. It allows special features such as booting over a network, 
+using the mouse, ACPI control and even browsing the web. <strong><br>
+</strong></li>
+<li><span style="font-size: 10pt;"><strong>Improved Performance: </strong>UEFI
+ compliant operating systems have been seen to have a significant 
+performance boost not just during the boot process but also during 
+running and powering off the system.</span></li>
+</ol>
+<h3>Windows 8 uses UEFI</h3>
+<p>UEFI though supported by several operating system vendors for years 
+has not seen widespread adoption until the release of Windows 8. Windows
+ 8 has tried to incorporate the best parts of UEFI into their latest 
+operating system release particularly the secure boot feature.</p>
+<h4>Secure Boot</h4>
+<p>One of UEFI’s most interesting features is called Secure Boot, which 
+allows you to boot only an authenticated OS kernel. Windows 8 relies 
+heavily on this method to ensure that only authenticated firmware with a
+ validated kernel image can be booted. This is quite different from 
+older bootstrapping methodologies where any kind of bootloading code can
+ be loaded and executed by the BIOS.</p>
+<p>In secure a boot before the BIOS gives full control to the OS, 
+bootloader makes sure that the firmware has been signed. This is done 
+with the help of cryptographic signatures that are embedded on the 
+firmware by the OEM. During the boot process the firmware will compare 
+the platform key with the key present in the firmware of each device. 
+This comparison is carried out between a database of authenticated valid
+ keys, if the key is allowed then the firmware is allowed to execute 
+otherwise it is rejected.</p>
+<p><img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI6.png" alt=""></p>
+<p>This allows only authenticated devices to be loaded and ensures that 
+malicious bootloader code is not loaded and executed. The safe boot 
+mechanism in windows 8 significantly reduces the chances of boot sector 
+viruses and bootkits from launching and affecting the boot process of 
+the machine.</p>
+<h3>UEFI Boot Process</h3>
+<p>The UEFI boot process is much like the boot process in conventional 
+BIOS with a few minor changes. The process is divided into stages which 
+take place sequentially and ends with the complete handover of control 
+to the operating system. UEFI booting runs in 32 bit or 64 bit protected
+ mode on the CPU not in 16bit mode unlike legacy BIOS.</p>
+<p>UEFI also starts with a small amount of code that begins the 
+execution of the entire booting process this phase is called the 
+Security phase (SEC) and it acts as the core root of trust. This is 
+followed by the Pre-EFI initialization (PEI) this mode is similar to the
+ Legacy bios pre boot initialization phase in which device firmware is 
+checked before boot. Then the Driver execution environment is started 
+where the actual initialization of extra device drivers takes place, 
+devices such as network cards and graphic cards are checked in this 
+phase.</p>
+<p>The boot device is selected during the BDS (Boot Device Selection) 
+phase. This then transfers control to the bootloader that is located in a
+ GPT partition, the bootloader handles the loading of the OS kernel into
+ memory.</p>
+<p><img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/073113_1327_AnatomyofBI7.png" alt=""></p>
+<h1>Common BIOS Threats</h1>
+<p>BIOS is always written to a non-volatile storage device such as an 
+EEPROM, this allows the contents of the ROM to be overwritten to 
+introduce bug fixes and updates for the particular BIOS version. However
+ this also has great potential for misuse such that, malicious programs 
+may also have the ability to modify the contents of the ROM disk if 
+given enough access.</p>
+<p><strong>User Initiated Attack<br>
+</strong></p>
+<p>This type of attack is carried out by end user who uses an 
+unauthenticated file to update the bios. This can be carried out by an 
+end user who doesn’t have prior knowledge about the update file or a 
+user with malicious intent.<br>
+<strong><br>
+Malware Attack</strong><br>
+Malware attacks can be used to exploit vulnerability in bios. The 
+attacker opens a backdoor to system and cause a bios crash using a 
+vulnerable update version of bios.</p>
+<p><strong>Network Based or Organisational Attack<br>
+</strong></p>
+<p>This is the large scale and crucial attack on organisational basis. 
+An attacker who gets access to a compromised update server can carry out
+ an organisational wide attack and infect all systems by rolling out all
+ authorised bios versions to malicious ones.</p>
+<h1>How do we mitigate common BIOS Threats</h1>
+<p>This section describes the security measures that an organisation 
+should implement in order to secure the BIOS. Since vulnerability in 
+BIOS is crucial point to a system, it is important that every 
+organisation should follow predefined guidelines to secure the BIOS 
+structure. The following method can be implemented in an enterprise 
+structure to enhance BIOS security</p>
+<p>In order to overcome the malicious attacks on BIOS, we can implement following methods:<br>
+• Digital Authentication Method<br>
+• Rollback Prevention Method<br>
+• Physical Authentication Method</p>
+<p><strong><br>
+Automated Authentication Method</strong><br>
+In this method, the authenticity of BIOS can be ensured through digital 
+signatures. Here bios updates should only be installed if its 
+authenticity is verified. Here, digital signature embedded update images
+ by BIOS manufactures will be the last level of authorisation. This 
+process can be automated by using a signature verification algorithm 
+that ensures the validity of the digital signatures. This digital 
+authentication method must be integrated by providing strong security 
+features.<br>
+<strong>Rollback Prevention Method</strong><br>
+Implement a mechanism that ensures the update images of BIOS such that, 
+it should not be rolled back to previous versions. This method ensures 
+that if an update image is to be installed, it should be ensured that 
+its version number is greater than the current one. This can ensure that
+ the bios version is not roll backed to a previous image that contains 
+vulnerability.</p>
+<p>But in some cases if the current higher version has to be rolled back
+ to a previous lesser version. i.e., if the current updated version of 
+the bios contains vulnerability and there are no higher version updates 
+to be installed and the earlier lesser version is stable than the 
+current one. In this case the corresponding authority has to ensure that
+ lesser version do not contain any vulnerability.</p>
+<p><strong><br>
+Physical Authentication Method</strong><br>
+This method provides the authenticity of updated images by ensuring the 
+physical presence of the corresponding authority (system administrator).
+ Here the authorities can verify the update images and update the BIOS, 
+if the image is a valid one. This method can be used as a subsidiary to 
+digital authentication method by providing as a recovery mechanism in 
+situations like bios crash.</p>
+<h1>References</h1>
+<ol>
+<li><a href="http://www.wikipedia.org/" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://www.wikipedia.org', 'www.wikipedia.org');">www.wikipedia.org</a></li>
+<li><a href="http://csrc.nist.gov/publications/nistpubs/800-147/NIST-SP800-147-April2011.pdf" onclick="__gaTracker('send', 'event', 'download', 'http://csrc.nist.gov/publications/nistpubs/800-147/NIST-SP800-147-April2011.pdf');">http://csrc.nist.gov/publications/nistpubs/800-147/NIST-SP800-147-April2011.pdf</a></li>
+<li><a href="http://csrc.nist.gov/publications/drafts/800-155/draft-SP800-155_Dec2011.pdf" onclick="__gaTracker('send', 'event', 'download', 'http://csrc.nist.gov/publications/drafts/800-155/draft-SP800-155_Dec2011.pdf');">http://csrc.nist.gov/publications/drafts/800-155/draft-SP800-155_Dec2011.pdf</a></li>
+<li>
+<div><a href="http://blogs.msdn.com/b/b8/archive/2011/09/22/protecting-the-pre-os-environment-with-uefi.aspx" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://blogs.msdn.com/b/b8/archive/2011/09/22/protecting-the-pre-os-environment-with-uefi.aspx', 'http://blogs.msdn.com/b/b8/archive/2011/09/22/protecting-the-pre-os-environment-with-uefi.aspx');">http://blogs.msdn.com/b/b8/archive/2011/09/22/protecting-the-pre-os-environment-with-uefi.aspx</a></div>
+</li>
+</ol>
+      <div class="share vertical">
+
+  <ul>
+    
+    <li class="twitter">
+      <iframe style="position: static; visibility: visible; width: 55px; height: 61px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-vertical" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/tweet_button_002.html" allowtransparency="true" scrolling="no" id="twitter-widget-1" frameborder="0"></iframe>
+    </li>
+    
+    <li class="google">
+      <div id="___plus_1" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 57px; height: 60px;"><iframe title="+Share" data-gapiattached="true" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/sharebutton_002.html" name="I1_1437382597143" id="I1_1437382597143" vspace="0" tabindex="0" style="position: static; top: 0px; width: 57px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+    </li>
+    
+    <li class="linkedin">
+      <span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1437382597124_3-container" class="IN-top"><span id="li_ui_li_gen_1437382597124_3" class="IN-top"><span id="li_ui_li_gen_1437382597124_3-inner" class="IN-top"><span id="li_ui_li_gen_1437382597124_3-content" class="IN-top">12</span></span></span></span></span><br><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1437382597122_2"><a id="li_ui_li_gen_1437382597122_2-link" href="javascript:void(0);"><span id="li_ui_li_gen_1437382597122_2-logo">in</span><span id="li_ui_li_gen_1437382597122_2-title"><span id="li_ui_li_gen_1437382597122_2-mark"></span><span id="li_ui_li_gen_1437382597122_2-title-text">Share</span></span></a></span></span></span><script type="IN/Share+init" data-counter="top"></script>
+    </li>
+    
+    <li class="reddit">
+      <script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/button2.js"></script><iframe src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/button2.html" scrolling="no" frameborder="0" height="69" width="51"></iframe>
+    </li>
+    
+    <li class="facebook">
+      <div fb-iframe-plugin-query="action=like&amp;app_id=552038044933986&amp;container_width=0&amp;href=http%3A%2F%2Fresources.infosecinstitute.com%2Fanatomy-of-bios-security%2F&amp;layout=box_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-width="90" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"><span style="vertical-align: bottom; width: 47px; height: 61px;"><iframe class="" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/like_002.html" style="border: medium none; visibility: visible; width: 47px; height: 61px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fa583e51c9c91" frameborder="0" height="1000px" width="90px"></iframe></span></div>
+    </li>
+    
+  </ul>
+
+</div>    </article>
+    <section class="post-author ">
+  
+  <div class="image">
+    <img alt="" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/6a76a72c896187484042013defcf9678.png" srcset="http://0.gravatar.com/avatar/6a76a72c896187484042013defcf9678?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96">
+  </div>
+  
+  <div class="name">
+    <span>Author</span>
+    <h5>
+      <a href="http://resources.infosecinstitute.com/author/steve-lynch">Steve Lynch</a>
+    </h5>
+  </div>
+  
+  <div class="description">
+    Steve has 9 yrs of experience in cyber security space. He worked as a
+ cyber journalist to collect news from various geographic locations 
+associated with cyber security. He has a great experience with linux and
+ holds many technology certificates.
+  </div>
+  
+    
+</section>  </div>
+  
+      <ul class="sidebar post-col-1-3">
+  
+    
+      
+          <li class="practice-exams">
+        <h4>Free Practice Exams</h4>
+        <ul>
+                      <li>
+              <a href="https://www.skillset.com/certifications/ccna" target="_blank">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/cisco-ccna-logo-lbox-72x40-ffffff.jpg" alt="CCNA Practice Exam" height="20" width="36">
+                CCNA Practice Exam
+              </a>
+            </li>
+                      <li>
+              <a href="https://www.skillset.com/certifications/comptia-networkplus" target="_blank">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/netplus-lbox-72x40-ffffff.jpg" alt="Network + Practice Exam" height="20" width="36">
+                Network + Practice Exam
+              </a>
+            </li>
+                      <li>
+              <a href="https://www.skillset.com/certifications/pmp" target="_blank">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/pmi-lbox-72x40-ffffff.jpg" alt="PMP Practice Exam" height="20" width="36">
+                PMP Practice Exam
+              </a>
+            </li>
+                      <li>
+              <a href="https://www.skillset.com/certifications/securityplus" target="_blank">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/sec-lbox-72x40-ffffff.jpg" alt="Security+ Practice Exam" height="20" width="36">
+                Security+ Practice Exam
+              </a>
+            </li>
+                      <li>
+              <a href="https://www.skillset.com/certifications/ceh" target="_blank">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/CEH1-lbox-72x40-ffffff.jpg" alt="CEH Practice Exam" height="20" width="36">
+                CEH Practice Exam
+              </a>
+            </li>
+                      <li>
+              <a href="https://www.skillset.com/certifications/cissp" target="_blank">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/cissp-lbox-72x40-ffffff.jpg" alt="CISSP Practice Exam" height="20" width="36">
+                CISSP Practice Exam
+              </a>
+            </li>
+                  </ul>
+      </li>
+        
+    
+      
+          <li class="editors-choice">
+        <h4>Editors Choice</h4>
+        <ul>
+                      <li>
+              <a class="icon post-s" href="http://resources.infosecinstitute.com/playing-hide-and-seek-with-metadata/">Playing Hide-and-Seek with Metadata</a>
+            </li>
+                      <li>
+              <a class="icon post-s" href="http://resources.infosecinstitute.com/interview-jeff-snyder-2/">Interview: Recruiter and Career Coach Jeff Snyder</a>
+            </li>
+                      <li>
+              <a class="icon post-s" href="http://resources.infosecinstitute.com/rootkits-user-mode-kernel-mode-part-2/">Rootkits: Kernel Mode</a>
+            </li>
+                  </ul>
+      </li>
+        
+    
+      
+          <li class="bootcamps">
+        <h4>Related Boot Camps</h4>
+        <ul>
+                      <li>
+              <a class="icon right-arrow" href="http://www.infosecinstitute.com/courses/security.html" target="_blank">Information Security</a>
+            </li>
+                      <li>
+              <a class="icon right-arrow" href="http://www.intenseschool.com/boot_camp/cisco/ccna" target="_blank">CCNA</a>
+            </li>
+                      <li>
+              <a class="icon right-arrow" href="http://www.intenseschool.com/boot_camp/pm/pm_professional" target="_blank">PMP</a>
+            </li>
+                      <li>
+              <a class="icon right-arrow" href="http://www.infosecinstitute.com/courses/microsoft-training.html" target="_blank">Microsoft</a>
+            </li>
+                      <li>
+              <a class="icon right-arrow" href="http://www.infosecinstitute.com/courses/incident_respone_network_forensics.html" target="_blank">Incident Response</a>
+            </li>
+                      <li>
+              <a class="icon right-arrow" href="http://www.infosecinstitute.com/courses/information-assurance.html" target="_blank">Information Assurance</a>
+            </li>
+                      <li>
+              <a class="icon right-arrow" href="http://www.infosecinstitute.com/courses/8570-training.html" target="_blank">8570</a>
+            </li>
+                  </ul>
+      </li>
+        
+    
+      
+        
+    
+      
+          <li class="author-posts">
+        <h4>More Posts by Author</h4>
+        <ul>
+                      <li>
+              <a class="icon arrow-right" href="http://resources.infosecinstitute.com/firefox-plug-ins-that-a-security-engineer-need-to-know/">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/firefox-add-ons-07092013-76x76-c-default.jpg" alt="Firefox Plug-ins a Security Engineer Needs to Know" height="38" width="38">
+                <h5>Firefox Plug-ins a Security Engineer Needs to Know</h5>
+              </a>
+            </li>
+                      <li>
+              <a class="icon arrow-right" href="http://resources.infosecinstitute.com/transition-of-iso-270012005-to-iso-270012013/">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/data-security-analyst-76x76-c-default.png" alt="Transition of ISO 27001: 2005 to ISO 27001: 2013" height="38" width="38">
+                <h5>Transition of ISO 27001: 2005 to ISO 27001: 2013</h5>
+              </a>
+            </li>
+                      <li>
+              <a class="icon arrow-right" href="http://resources.infosecinstitute.com/security-operations-center/">
+                <img src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/ops-center05072015-76x76-c-default.jpg" alt="Security Operations Center" height="38" width="38">
+                <h5>Security Operations Center</h5>
+              </a>
+            </li>
+                  </ul>
+      </li>
+        
+    
+    
+</ul>    
+  <ul class="random-posts ">
+      <li style="background-image: url('http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads//metadata-sized-237x237-c-default.jpg');">
+      <a class="icon post-l" href="http://resources.infosecinstitute.com/playing-hide-and-seek-with-metadata/" title="Playing Hide-and-Seek with Metadata">
+        <h3>Playing Hide-and-Seek with Metadata</h3>
+      </a>
+    </li>
+      <li style="background-image: url('http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads//Interview-04172015-237x237-c-default.jpg');">
+      <a class="icon post-l" href="http://resources.infosecinstitute.com/interview-jeff-snyder-2/" title="Interview: Recruiter and Career Coach Jeff Snyder">
+        <h3>Interview: Recruiter and Career Coach Jeff…</h3>
+      </a>
+    </li>
+      <li style="background-image: url('http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads//20090406_rootkit-237x237-c-default.jpg');">
+      <a class="icon post-l" href="http://resources.infosecinstitute.com/rootkits-user-mode-kernel-mode-part-2/" title="Rootkits: Kernel Mode">
+        <h3>Rootkits: Kernel Mode</h3>
+      </a>
+    </li>
+      <li style="background-image: url('http://2we26u4fam7n16rz3a44uhbe1bq2.wpengine.netdna-cdn.com/wp-content/uploads//ISgeek07152015-237x237-c-default.gif');">
+      <a class="icon post-l" href="http://resources.infosecinstitute.com/are-you-infosec-geek-enough-take-this-quiz-and-lets-see-what-you-got/" title="Are You InfoSec Geek Enough? Take This Quiz and Let’s See What You Got!">
+        <h3>Are You InfoSec Geek Enough? Take…</h3>
+      </a>
+    </li>
+  </ul>  
+      
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/a.html" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 869px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe></div>
+
+
+  
+        </div>
+      </section>
+      
+              <footer class="site-footer">
+  
+  <div class="ctas full">
+    
+    <div class="col-3-3 wrapper">
+      
+      <div class="col-1-3">
+        <h6>About InfoSec</h6>
+        <p>InfoSec Institute is the best source for high quality <a href="http://www.infosecinstitute.com/" style="color:#fff;">information security training</a>.
+ We have been training Information Security and IT Professionals since 
+1998 with a diverse lineup of relevant training courses. In the past 16 
+years, over 50,000 individuals have trusted InfoSec Institute for their 
+professional development needs! </p>
+
+      </div>
+      
+      <div class="col-1-3">
+        <h6>Connect with us</h6>
+        <p>Stay up to date with <a href="http://www.infosecinstitute.com/" style="color:#fff;">InfoSec Institute</a> and <a href="http://www.intenseschool.com/" style="color:#fff;">Intense School</a> - at info@infosecinstitute.com</p>
+
+        <ul class="footer-social">
+  <li>
+    <div fb-iframe-plugin-query="action=like&amp;app_id=552038044933986&amp;container_width=0&amp;href=http%3A%2F%2Fresources.infosecinstitute.com%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-href="http://resources.infosecinstitute.com" data-width="90" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"><span style="vertical-align: bottom; width: 79px; height: 20px;"><iframe class="" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/like_003.html" style="border: medium none; visibility: visible; width: 79px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f141fa9fb06b772" frameborder="0" height="1000px" width="90px"></iframe></span></div>
+  </li>
+  <li>
+    <iframe style="position: static; visibility: visible; width: 133px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/follow_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-2" frameborder="0"></iframe>
+  </li>
+</ul>      </div>
+      
+      <div class="col-1-3">
+        <form action="/newsletter/signup" method="post" class="mailchimp has-loader" novalidate="">
+  
+  <aside>
+    <h6>Join our newsletter</h6>
+    <p>Get the latest news, updates &amp; offers straight to your inbox.</p>
+
+  </aside>
+  
+  <fieldset>
+    <input title="Email address" name="EMAIL" placeholder="Enter your email" type="email">
+    <input value="Subscribe" class="generic-cta green" type="submit">
+    <input name="b_2593cfe26893087ed36e00fe3_ba06ce498c" tabindex="-1" type="text">
+  </fieldset>
+  
+</form>      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="navigation full">
+    
+    <div class="col-3-3 wrapper">
+      
+      <nav class="footer">
+        <ul>
+                  </ul>
+      </nav>
+
+      <div class="copyright">© InfoSec Institute 2015</div>
+      
+    </div>
+    
+  </div>
+
+</footer>            
+    </main>
+    
+      <div class="modal">
+  <div class="modal-inner">
+    <a rel="modal:close">Close</a>
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+<div id="modal-hidden">
+                <div id="download">
+  <div class="pardot form">
+    <h4 class="pardot-title">File download</h4>
+    <form id="download-form" action="https://go.pardot.com/l/12882/2014-12-11/cqhcw" method="post">
+      
+      <input name="url" value="http://resources.infosecinstitute.com/anatomy-of-bios-security/" type="hidden">
+      
+      <ul>
+        <li data-required="">
+          <label>First Name</label>
+          <input name="first_name">
+        </li>
+        <li data-required="">
+          <label>Last Name</label>
+          <input name="last_name">
+        </li>
+        <li data-required="">
+          <label>Work Phone Number</label>
+          <input name="phone">
+        </li>
+        <li data-required="">
+          <label>Work Email Address</label>
+          <input name="email">
+        </li>
+        <li>
+          <label>Job Title</label>
+          <input name="job_title">
+        </li>
+        <li>
+          <label>Does your employer pay for training?</label>
+          <div data-selected="No" class="dd">
+            <select name="employer_paid_training">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </li>
+        <li class="training-timeline">
+          <label>What is your timeline for training?</label>
+          <div data-selected="" class="dd">
+            <select name="training_timeline">
+              <option selected="selected" value="N/A"></option>
+              <option value="Within a month">Within a month</option>
+              <option value="1-3 months">1-3 months</option>
+              <option value="3-6 months">3-6 months</option>
+              <option value="6-12 months">6-12 months</option>
+              <option value="Over 1 year">Over 1 year</option>
+            </select>
+          </div>
+        </li>
+        <li class="full">
+          <input name="entry_id" value="20308" type="hidden">
+          <input name="entry_title" value="Anatomy of BIOS Security" type="hidden">
+          <input name="entry_url" value="http://resources.infosecinstitute.com/anatomy-of-bios-security/" type="hidden">
+          <input class="generic-cta green" value="Download files" type="submit">
+        </li>
+      </ul>
+      
+      <p>InfoSec institute respects your privacy and will never use your
+ personal information for anything other than to notify you of your 
+requested course pricing. We will never sell your information to third 
+parties. You will not be spammed.</p>
+      
+      <div style="position:absolute; left:-9999px; top: -9999px;">
+        <label for="pardot_extra_field">Comments</label>
+        <input id="pardot_extra_field" name="pardot_extra_field" type="text">
+      </div>
+      
+    </form>
+  </div>
+</div>            <div id="skillset-modal">
+  <div class="skillset window">
+    <h4>What is Skillset?</h4>
+    <aside>
+      
+      <div class="left">
+        <h3>Skillset</h3>
+        <h5>Practice tests &amp; assessments.</h5>
+      </div>
+      
+      <div class="right">
+        <p>Practice for certification success with the Skillset library 
+of over 100,000 practice test questions. We analyze your responses and 
+can determine when you are ready to sit for the test. Along your journey
+ to exam readiness, we will:</p>
+<p></p>
+<p>1. Determine which required skills your knowledge is sufficient<br>
+2. Which required skills you need to work on<br>
+3. Recommend specific skills to practice on next<br>
+4. Track your progress towards a certification exam</p>
+
+      </div>
+      
+    </aside>
+  </div>
+</div>    </div>      
+    <script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/in.js" type="text/javascript">lang: en_US</script>
+
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=552038044933986";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script gapi_processed="true" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/platform.js" async="" defer="defer"></script>      
+      <script>var postID = 20308;</script>
+    
+    <script type="text/javascript">
+<!--
+piCId = '1951';
+piAId = '13882';
+
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+-->
+</script><script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/form.js"></script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/app.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"platform":"wordpress@4.2.2","language":"","remote_auth_s3":"W10= 88dcffd8540585ab2988c270a7e06c7eede5f86f 1437382695","api_key":"1TA9XhBKpqfZxr6kJiBvCescmAiajXtudB0o4aJYPZguLsFA5bUOtWPGbsoOAiku","sso":{"name":"InfoSec Institute","button":false,"url":"http:\/\/resources.infosecinstitute.com\/wp-login.php","logout":"http:\/\/resources.infosecinstitute.com\/wp-login.php?action=logout","width":"800","height":"700"}},"disqusIdentifier":"20308 http:\/\/resources.infosecinstitute.com\/?p=20308","disqusShortname":"infosecinstituteresources","disqusTitle":"Anatomy of BIOS Security","disqusUrl":"http:\/\/resources.infosecinstitute.com\/anatomy-of-bios-security\/","options":{"manualSync":false},"postId":"20308"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/disqus.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"infosecinstituteresources"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/count.js"></script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/jquery.js"></script><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/postmessageRelay.html" id="oauth2relay612358285" name="oauth2relay612358285"></iframe>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var icegram_pre_data = {"ajax_url":"http:\/\/resources.infosecinstitute.com\/wp-admin\/admin-ajax.php","post_obj":{"is_home":false,"page_id":20308,"action":"display_messages","shortcodes":[],"cache_compatibility":"yes"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/main_002.js"></script>
+
+    
+  
+  
+<script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/icegram.js" id="ig_script_0" type="text/javascript"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/main.js" id="ig_script_1" type="text/javascript"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/frontend_002.js" id="ig_script_2" type="text/javascript"></script><script src="Anatomy%20of%20BIOS%20Security%20-%20InfoSec%20Institute_fichiers/frontend.js" id="ig_script_3" type="text/javascript"></script><div id="icegram_messages_container"></div></body></html>
