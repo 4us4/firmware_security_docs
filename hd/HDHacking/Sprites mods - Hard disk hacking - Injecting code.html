@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<title>Sprites mods - Hard disk hacking - Injecting code</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/style-new.css">
+<link rel="stylesheet" type="text/css" href="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/print.css" media="print">
+<link type="application/rss+xml" rel="alternate" title="Sprites Mods" href="http://spritesmods.com/rss.php">
+<script src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/ca-pub-6055011648930388.js" type="text/javascript" async=""></script><script id="COINWIDGETCOM_JQUERY" src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/jquery.js"></script><link href="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/coin.css" type="text/css" rel="stylesheet" id="COINWIDGETCOM_STYLESHEET"><script id="COINWIDGETCOM_INFO0.5405843142324175" src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/lookup.php"></script></head>
+<body>
+
+<div id="header"><span id="sitename"><span id="sitenamebig">SpritesMods</span>.com</span><h1>Hard disk hacking - Injecting code</h1></div>
+
+
+<div id="left">
+<p>
+<a href="http://spritesmods.com/?art=main">Welcome</a><br></p><ul id="mainmenu"><li><a href="http://spritesmods.com/?art=hardware">Hardware stuff</a></li><li><a href="http://spritesmods.com/?art=hacks">Hacks</a><ul id="submenu"><li><a href="http://spritesmods.com/?art=vpx500">Hacking the VPx500</a></li><li><a href="http://spritesmods.com/?art=hddhack">Hard disk hacking</a></li><li><a href="http://spritesmods.com/?art=zx3hack">Hacking the Kodak Zx3</a></li><li><a href="http://spritesmods.com/?art=rtl8366sb">Dumb to managed switch conversion</a></li><li><a href="http://spritesmods.com/?art=rapidisnake">Snake on a Keyboard</a></li><li><a href="http://spritesmods.com/?art=twitter1943">Twittering vintage arcade game</a></li><li><a href="http://spritesmods.com/?art=ledbl">LEDs replacing CCFL backlight</a></li><li><a href="http://spritesmods.com/?art=keybled">Laptop keyboard LED</a></li><li><a href="http://spritesmods.com/?art=wskpsip">Convert a SMC WSKP100 to use SIP</a></li><li><a href="http://spritesmods.com/?art=mouseeye">Optical mouse-cam</a></li><li><a href="http://spritesmods.com/?art=picframe">Use a cheap digital photoframe as a second display for your PC</a></li><li><a href="http://spritesmods.com/?art=sweexusb">Add USB to a Sweex LB000021 router</a></li><li><a href="http://spritesmods.com/?art=ljdisplay">Standalone HPLJ display hack</a></li><li><a href="http://spritesmods.com/?art=swordfish">Damocles' Swordfish</a></li><li><a href="http://spritesmods.com/?art=wtcluster">Cluster using WT-300s</a></li></ul></li><li><a href="http://spritesmods.com/?art=consoles">Console hacking</a></li><li><a href="http://spritesmods.com/?art=security">Security</a></li><li><a href="http://spritesmods.com/?art=software">Software</a></li><li><a href="http://spritesmods.com/?art=nabaztag">Nabaztag</a></li><li><a href="http://spritesmods.com/?art=about">About Spritesmods</a></li></ul></div>
+
+<div id="right">
+<div id="righttop">
+<p><a href="http://spritesmods.com/?art=hddhack&amp;page=1"><strong>Page 1</strong><br></a>Intro</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=2"><strong>Page 2</strong><br></a>Parts on the PCB</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=3"><strong>Page 3</strong><br></a>Hooking up JTAG</p><p><strong>Page 4</strong><br>Injecting code</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=5"><strong>Page 5</strong><br></a>Persistence</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=6"><strong>Page 6</strong><br></a>Software flashing</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=7"><strong>Page 7</strong><br></a>Other uses</p><p><a href="http://spritesmods.com/?art=hddhack&amp;page=8"><strong>Page 8</strong><br></a>Conclusion (+ discussion / remarks)</p><p>
+</p>
+</div>
+<div id="rightbottom">
+<p>
+Do you like my hacking? If so, please consider leaving something in the<br>
+</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input name="cmd" value="_donations" type="hidden">
+<input name="business" value="AWHK8LYRDDS3C" type="hidden">
+<input name="lc" value="GB" type="hidden">
+<input name="item_name" value="Spritesmods.com" type="hidden">
+<input name="no_note" value="0" type="hidden">
+<input name="cn" value="Remarks" type="hidden">
+<input name="no_shipping" value="1" type="hidden">
+<input name="rm" value="1" type="hidden">
+<input name="return" value="http://spritesmods.com/?art=main&amp;thanks=1" type="hidden">
+<input name="currency_code" value="EUR" type="hidden">
+<input name="bn" value="PP-DonationsBF:donate.png:NonHosted" type="hidden">
+<input src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/donate.png" name="submit" alt="PayPal, de veilige en complete manier van online betalen." border="0" type="image">
+<!--
+<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+-->
+</form>
+
+<p>
+Or use Bitcoins:<br>
+<script src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/coin.js"></script>
+<script>
+CoinWidgetCom.go({
+	wallet_address: "16wKm29FmTLmYSrDtBXB4zLYGsqfrTwcEC"
+	, currency: "bitcoin"
+	, counter: "count"
+	, alignment: "bl"
+	, qrcode: true
+	, auto_show: false
+	, lbl_button: "Donate"
+	, lbl_address: "My Bitcoin Address:"
+	, lbl_count: "donations"
+	, lbl_amount: "BTC"
+});
+</script><span data-coinwidget-instance="0" class="COINWIDGETCOM_CONTAINER"><a class="COINWIDGETCOM_BUTTON_BITCOIN" href="#"><img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/icon_bitcoin.png"><span>Donate</span></a><span>0</span></span>
+</p>
+
+
+<p>
+<br>Current contents:
+<br>EUR282 (about $375.06) and a bunch of cool hardware.
+</p>
+
+
+<p>
+Follow Spritesmods on <a href="http://twitter.com/SpritesMods">Twitter</a>!
+</p>
+</div>
+</div>
+<div id="center">
+<p></p><h1>Injecting code
+</h1>
+<p></p>
+<!-- google_ad_section_start -->
+<p>
+Ofcourse, if I wanted to change something in the cache, I couldn't
+scan the complete 64MB of RAM every time: I needed to know how the
+cache works. For that, I would need to dump, disassemble and understand
+the hard disk firmware at least enough to make sense of the caching
+functions.
+</p>
+<p>
+Disassembling this firmware is not a trivial task. First of all, the
+code mixes ARM and thumb-style instructions, which is irritating if
+you don't have a disassembler which can automatically switch between
+the two. Furthermore, something that usually makes disassembling
+software a lot easier is absent: Usually, routines are coded to spit
+out messages like "Couldn't open logfile! when something goes wrong.
+These messages are a huge help in figuring out what a routine does.
+This firmware, however, has none of these strings: you need to figure
+out what a routine does purely by the code. The codebase seems to be
+a bit old, though, and sometimes the disassembly feels like some features
+have been 'bolted on' to the code later, making everything a bit more
+complicated.
+</p>
+<p>
+There also are a few things that make life easier, though. First of all,
+it seems Western Digital hasn't been intentionally obfuscating the code:
+no tricks like jumping in the middle of an instruction have been used.
+Also, because the JTAG-interface is available, you can meddle with the
+code, set breakpoints or change it on-the-fly, making figuring out what
+routine gets run when immensely easier.
+</p>
+<p>
+After a long time of staring at the code, trying to make sense of things
+and sometimes jumping into the debugger to see if a guess was correct,
+I managed to get to the core of the caching system: a table in RAM
+I call the 'cache descriptor table':<br>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/cachestruct.png">
+<img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/tmb-cachestruct.png"></a>
+</p>
+
+<p>
+Every entry in the cache descriptor table describes a block in the
+cache. It contains the start LBA of the disk sectors that are or 
+should be cached, how much of the cache actually is filled with 
+disk data, some flags indicating the state of the cache entry and a 
+number indicating where in memory the cached data resides.
+</p>
+<p>
+Now, with the secrets of the cache descriptor table unraveled, could
+I intercept a disk read before it'd go out the SATA-port to the PC?
+To do that, I'd need to be able to execute my own code on the hard
+disk controller. Moreover, I would have to make sure the code
+would get run on the correct time: if it modified the cache too soon,
+the data wouldn't be in there yet; if it modified the cache too late,
+the data would've already gone to the PC. 
+</p>
+<p>
+The way I did this was by hooking an existing routine. My hack would 
+be in Feroceon 2, and that CPU did all the SATA transfers, so there must
+be some routine that's responsible for setting up the SATA hardware
+to pick up the data from cache. If I could find this routine, I could
+perhaps run my own code before it.
+</p>
+<p>
+After a lot of browsing, setting breakpoints, failing and trying again,
+I finally found some routine that fit the bill. I modified it to run
+my code before it by hooking it. Here's the original code:
+</p><pre>000167BE ; r0 - slot in sata_req
+000167BE sub_0_167BE:
+000167BE                 PUSH    {R4-R7,LR}
+000167C0                 MOVS    R7, R0
+000167C2                 <b>LSLS    R1, R0, #4</b>
+000167C4                 <b>LDR     R0, =sata_req</b>
+000167C6                 <b>SUB     SP, SP, #0x14</b>
+000167C8                 <b>ADDS    R6, R1, R0</b>
+000167CA                 <b>LDRB    R1, [R6,#0xD]</b>
+000167CC                 LDR     R2, =stru_0_40028DC
+000167CE                 STR     R1, [SP,#0x28+var_1C]
+000167D0                 LDRB    R0, [R6,#(off_0_FFE3F108+2 - 0xFFE3F0FC)]
+000167D2                 LDRB    R5, [R6,#(off_0_FFE3F108 - 0xFFE3F0FC)]
+000167D4                 LSLS    R0, R0, #4
+</pre>
+
+And here's what happens when the code is hooked to call my code:
+
+<pre>000167BE ; r0 - slot in sata_req
+000167BE sub_0_167BE:
+000167BE                 PUSH    {R4-R7,LR}
+000167C0                 MOVS    R7, R0
+000167C2                 <i>LD      R6, =hookedAddr</i>
+000167C4                 <i>BX      R6</i>
+000167C6                 <i>.dw     checksumFix</i>
+000167C8                 <i>.dd     hookedAddr</i>
+000167CC                 LDR     R2, =stru_0_40028DC
+000167CE                 STR     R1, [SP,#0x28+var_1C]
+000167D0                 LDRB    R0, [R6,#(off_0_FFE3F108+2 - 0xFFE3F0FC)]
+000167D2                 LDRB    R5, [R6,#(off_0_FFE3F108 - 0xFFE3F0FC)]
+000167D4                 LSLS    R0, R0, #4
+...
+FFE3F000                 PUSH    {R0-R12, LR}
+FFE3F004                 BX      changeThingsInCache
+FFE3F008                 POP     {R0-R12, LR}
+FFE3F00C                 <b>LSLS    R1, R0, #4</b>
+FFE3F010                 <b>LDR     R0, =sata_req</b>
+FFE3F014                 <b>SUB     SP, SP, #0x14</b>
+FFE3F018                 <b>ADDS    R6, R1, R0</b>
+FFE3F01C                 <b>LDRB    R1, [R6,#0xD]</b>
+FFE3F020                 BX      0x167CC
+</pre>
+<p></p>
+<p>
+As you can see, some original instructions are replaced with a jump to
+new code in an otherwise unused bit of ram at address 0xFFE3F000 and
+an extra word to make sure the checksum of the code region still is 
+valid. If this isn't done, the HD will try to load a backup from its 
+platters, which isn't what we want. The code that's jumped to executes
+a routine called changeThingsInCache and then does what the replaced
+code would've done. It then continues execution in the original routine
+like nothing has happened.
+</p>
+<p>
+Now all I need to write was a routine to modify the cached data. For a
+first test, I decided on a routine that in pseudocode went something
+like this:
+
+</p><pre>void hook() {
+  foreach (cache_struct in cache_struct_table) {
+    if (is_valid(cache_struct)) {
+      foreach (sector in cache_struct.sectors) {
+        sector[0]=0x12345678;
+      }
+    }
+  }
+}
+</pre>
+<p></p>
+<p>
+This little bit of code would replace the first 4 bytes of every
+sector in cache with 0x12345678 every time it's called, so if I uploaded
+all this to the hard disk, I should see that number on the start of
+every sector I read. I uploaded the bits of code over JTAG...<br>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/1sthack_1.png">
+<img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/tmb-1sthack_1.png"></a>
+</p>
+And lo and behold:<br>
+<a href="http://meuk.spritesserver.nl/foto/foto/hdhack/1sthack_2.png">
+<img src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/tmb-1sthack_2.png"></a>
+<p></p>
+<!-- google_ad_section_end -->
+<p>	<script async="" src="Sprites%20mods%20-%20Hard%20disk%20hacking%20-%20Injecting%20code_files/adsbygoogle.js"></script>
+	<!-- singlebigad -->
+	<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6055011648930388" data-ad-slot="3668631373"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</p><p id="prevnext"><a href="http://spritesmods.com/?art=hddhack&amp;page=3">« Prev</a>&nbsp;4&nbsp;<a href="http://spritesmods.com/?art=hddhack&amp;page=5">Next »</a></p><br><div class="copy">© 2006-2014 Sprite_tm - <a href="http://spritesmods.com/?art=contact&amp;af=Hard%20disk%20hacking">Contact</a></div></div>
+
+
+</body></html>
